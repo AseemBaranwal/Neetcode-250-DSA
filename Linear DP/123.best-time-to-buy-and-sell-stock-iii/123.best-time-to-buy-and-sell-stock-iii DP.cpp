@@ -8,6 +8,7 @@
 class Solution {
 public:
     int maxProfit(vector<int>& prices) {
+        // This is the recursive top-down Dynamic Programming solution
         return profit(prices, 0, 1, 0);
     }
     int profit(vector<int> &prices, int idx, int buyToday, int tradesDone){

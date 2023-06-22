@@ -1,4 +1,4 @@
-This repository is created to keep track of the DSA practice for Dynamic programming. The list used is curated by user [mahesh_nagarwal](https://leetcode.com/mahesh_nagarwal/) and the list is available over [here](https://leetcode.com/discuss/general-discussion/1050391/Must-do-Dynamic-programming-Problems-Category-wise)
+This repository is created to keep track of the DSA practice for Dynamic programming. The list used is curated by user [mahesh_nagarwal](https://leetcode.com/mahesh_nagarwal/) and the list is available over [here](https://leetcode.com/discuss/general-discussion/1050391/Must-do-Dynamic-programming-Problems-Category-wise).
 
 1. Linear Dp [link](https://leetcode.com/list/50vlu3z5/)  
    These type of questions are easy to figure out. You just need to find the repetitive part of solution and improve it by saving its result somewhere. A classical example is fibonacci series.
