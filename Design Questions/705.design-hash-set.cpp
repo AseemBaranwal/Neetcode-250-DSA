@@ -11,7 +11,7 @@ using namespace std;
 class MyHashSet {
     // A very easy approach is to use a hashmap to solve the problem. However, without
     // using any datastructures, we can do it using the Linked List and hashing.
-    // Whenever we face collision, we would put the node at the head at the hashed key
+    // Whenever we face collision, we would put the node at the tail at the hashed key
     int prime = 10007;
     vector<list<int>> lst = vector<list<int>>(prime);
     list<int>::iterator searchList(int key){
