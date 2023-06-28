@@ -23,7 +23,7 @@ public:
     void add(int key) {
         int h = key%prime;
         if(!contains(key)){
-            lst[key].push_back(key);
+            lst[h].push_back(key);
         }
     }
     
