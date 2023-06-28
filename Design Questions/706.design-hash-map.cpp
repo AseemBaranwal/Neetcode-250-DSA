@@ -12,6 +12,7 @@ class MyHashMap {
     const static int size = 19997;
     const static int mult = 12582917;
     vector<list<pair<int, int>>> hashMap = vector<list<pair<int, int>>>(size);
+
     list<pair<int, int>>::iterator findIterator(list<pair<int, int>> &lst, int key){
         list<pair<int, int>>::iterator it = lst.begin();
         while(it != lst.end()){
@@ -29,10 +30,10 @@ public:
     
     void put(int key, int value) {
         int h = hash(key);
-        if(get(key) == -1){
+        auto it = findIterator(hashMap[h], key);
+        if(it == hashMap[h].end()){
             hashMap[h].push_back({key, value});
         }else{
-            auto it = findIterator(hashMap[h], key);
             it->second = value;
         }
     }
@@ -45,8 +46,8 @@ public:
     
     void remove(int key) {
         int h = hash(key);
-        if(get(key) != -1){
-            auto it = findIterator(hashMap[h], key);
+        auto it = findIterator(hashMap[h], key);
+        if(it != hashMap[h].end()){
             hashMap[h].erase(it);
         }
     }
