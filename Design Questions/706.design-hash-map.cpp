@@ -9,8 +9,9 @@ using namespace std;
 
 // @lc code=start
 class MyHashMap {
-    int prime = 10007;
-    vector<list<pair<int, int>>> hashMap = vector<list<pair<int, int>>>(prime);
+    const static int size = 19997;
+    const static int mult = 12582917;
+    vector<list<pair<int, int>>> hashMap = vector<list<pair<int, int>>>(size);
     list<pair<int, int>>::iterator findIterator(list<pair<int, int>> &lst, int key){
         list<pair<int, int>>::iterator it = lst.begin();
         while(it != lst.end()){
@@ -20,11 +21,14 @@ class MyHashMap {
         }
         return it;
     }
+    int hash(int key) {
+        return (int)((long)key * mult % size);
+    }
 public:
     MyHashMap() {}
     
     void put(int key, int value) {
-        int h = key%prime;
+        int h = hash(key);
         if(get(key) == -1){
             hashMap[h].push_back({key, value});
         }else{
@@ -34,13 +38,13 @@ public:
     }
     
     int get(int key) {
-        int h = key%prime;
+        int h = hash(key);
         auto it = findIterator(hashMap[h], key);
         return it == hashMap[h].end() ? -1 : it->second;
     }
     
     void remove(int key) {
-        int h = key%prime;
+        int h = hash(key);
         if(get(key) != -1){
             auto it = findIterator(hashMap[h], key);
             hashMap[h].erase(it);
