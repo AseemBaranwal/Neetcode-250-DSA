@@ -15,29 +15,29 @@ class MyHashSet {
     int prime = 10007;
     vector<list<int>> lst = vector<list<int>>(prime);
     list<int>::iterator searchList(int key){
-        key %= prime;
-        return find(lst[key].begin(), lst[key].end(), key);
+        int h = key%prime;
+        return find(lst[h].begin(), lst[h].end(), key);
     }
 public:
     MyHashSet() {}
     void add(int key) {
-        key %= prime;
+        int h = key%prime;
         if(!contains(key)){
             lst[key].push_back(key);
         }
     }
     
     void remove(int key) {
-        key %= prime;
+        int h = key%prime;
         auto it = searchList(key);
-        if(it != lst[key].end()){
-            lst[key].erase(it);
+        if(it != lst[h].end()){
+            lst[h].erase(it);
         }
     }
     
     bool contains(int key) {
-        key %= prime;
-        return searchList(key) != lst[key].end();
+        int h = key%prime;
+        return searchList(key) != lst[h].end();
     }
 };
 
