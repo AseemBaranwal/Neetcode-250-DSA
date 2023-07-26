@@ -17,11 +17,7 @@ public:
             if(k%2 == 0) opposite = !opposite;
             k = (k+1)/2;
         }
-        int res = arr[k];
-        if(opposite){
-            return res == 0 ? 1 : 0;
-        }
-        return res;
+        return arr[k] ^ opposite;
     }
 };
 // @lc code=end
