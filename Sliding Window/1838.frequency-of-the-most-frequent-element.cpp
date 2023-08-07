@@ -29,4 +29,11 @@ class Solution {
         return res;
     }
 };
+
+int main() {
+    Solution s;
+    vector<int> nums = {1, 4, 8, 13};
+    cout << s.maxFrequency(nums, 5) << endl;
+    return 0;
+}
 // @lc code=end

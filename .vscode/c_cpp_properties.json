@@ -9,10 +9,10 @@
             "macFrameworkPath": [
                 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks"
             ],
-            "compilerPath": "/usr/bin/g++",
+            "compilerPath": "/opt/homebrew/bin/g++-13",
             "cStandard": "c17",
             "cppStandard": "c++17",
-            "intelliSenseMode": "macos-gcc-arm64"
+            "intelliSenseMode": "${default}"
         },
         {
             "name": "C++ Launch",
@@ -21,13 +21,17 @@
             "program": "${workspaceFolder}/a.out",
             "stopAtEntry": false,
             "customLaunchSetupCommands": [
-              { "text": "target-run", "description": "run target", "ignoreFailures": false }
+                {
+                    "text": "target-run",
+                    "description": "run target",
+                    "ignoreFailures": false
+                }
             ],
             "launchCompleteCommand": "exec-run",
             "osx": {
-              "MIMode": "lldb"
-            },
-        },
+                "MIMode": "lldb"
+            }
+        }
     ],
     "version": 4
 }
