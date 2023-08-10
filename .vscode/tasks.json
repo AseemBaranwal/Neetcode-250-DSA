@@ -2,8 +2,8 @@
     "tasks": [
         {
             "type": "cppbuild",
-            "label": "C/C++: g++ build active file",
-            "command": "/usr/bin/g++",
+            "label": "C/C++: g++-13 build active file",
+            "command": "/opt/homebrew/bin/g++-13",
             "args": [
                 "-fdiagnostics-color=always",
                 "-g",
