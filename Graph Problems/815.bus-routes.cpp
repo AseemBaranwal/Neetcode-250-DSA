@@ -18,7 +18,7 @@ class Solution {
         // traversed again. In every iteration, all the stops at routes will be
         // traversed and accounted the same bus taken value and then pushed to
         // the queue.
-        unordered_set<int> vis;
+        unordered_set<int> vis;  // For stops, so that we don't visit them again
         unordered_map<int, vector<int>> G;
         for (int i = 0; i < routes.size(); i++) {
             for (int j : routes[i]) G[j].push_back(i);
